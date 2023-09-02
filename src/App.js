@@ -1,23 +1,47 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Jimmy from './pages/Jimmy';
+import Fetch from './pages/Fetch';
+import Hooks from './pages/Hooks';
 
-function App() {
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+
+const App = () => {
+
+    const [persons, setPersons] = useState([
+      {
+        name:'Anja',
+        lname: 'Rasic',
+        age: 11
+      },
+      {
+        name:'Teodor',
+        lname: 'Rasic',
+        age: 5
+      },
+      {
+        name:'Veljko',
+        lname: 'Rasic',
+        age: 5
+      },
+    ])
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <Navbar />
+
+        <Routes>
+          <Route path='/' element={<Jimmy />} />
+          <Route path='/fetch' element={<Fetch />} />
+          <Route path='/hooks' element={<Hooks persons={persons} setPersons={setPersons} />} />
+        </Routes>
+
+      </BrowserRouter>
     </div>
   );
 }
