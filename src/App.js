@@ -7,10 +7,12 @@ import Fetch from './pages/Fetch';
 import Hooks from './pages/Hooks';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import FetchDogs from './pages/FetchDogs';
 
 
 const App = () => {
 
+    //? Hooks ex:
     const [persons, setPersons] = useState([
       {
         name:'Anja',
@@ -29,6 +31,8 @@ const App = () => {
       },
     ])
 
+   
+
 
   return (
     <div className="App">
@@ -39,6 +43,7 @@ const App = () => {
           <Route path='/' element={<Jimmy />} />
           <Route path='/fetch' element={<Fetch />} />
           <Route path='/hooks' element={<Hooks persons={persons} setPersons={setPersons} />} />
+          <Route path='/fetch-dogs' element={<FetchDogs />} />
         </Routes>
 
       </BrowserRouter>
