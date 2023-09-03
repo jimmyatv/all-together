@@ -1,6 +1,6 @@
-import React from 'react';
+import {React, useState} from 'react';
 
-const Crud = () => {
+const Crud = ({persons, setPersons}) => {
   return (
     <div>
         CRUD

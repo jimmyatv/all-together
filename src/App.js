@@ -53,7 +53,7 @@ const App = () => {
           <Route path='/fetch' element={<Fetch />} />
           <Route path='/hooks' element={<Hooks persons={persons} setPersons={setPersons} />} />
           <Route path='/fetch-dogs' element={<FetchDogs />} />
-          <Route path='/crud' element={<Crud />} />
+          <Route path='/crud' element={<Crud persons={persons} setPersons={setPersons} />} />
         </Routes>
 
       </BrowserRouter>
