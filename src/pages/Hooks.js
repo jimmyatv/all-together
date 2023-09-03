@@ -17,12 +17,13 @@ const Hooks = ({ persons, setPersons }) => {
     e.preventDefault();
 
     let newPerson = {
+      id:'',
       name: name,
       lname: lname,
       age: age
     }
 
-    if(name != '' && lname != '' && age != ''){
+    if(name !== '' && lname !== '' && age !== ''){
       setPersons(prev => [...prev, newPerson]);
 
       setName('');
@@ -52,7 +53,7 @@ const Hooks = ({ persons, setPersons }) => {
         {persons.map((person, idx) => {
           return (
             <li key={idx}>
-              {person.name} {person.lname} {person.age}
+              <strong>{idx + 1}</strong> {person.name} {person.lname} {person.age} 
               <button onClick={() => deletePerson(idx)} style={{marginLeft:'30px', borderRadius:'8px'}}>DELETE</button>
               <hr/>
             </li>
