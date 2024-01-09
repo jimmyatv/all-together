@@ -1,0 +1,24 @@
+.contact svg {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.contact a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.contact span:first-child {
+    margin-right: 1rem;
+    padding: 0.5rem 2rem;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    transition: 1s linear;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.contact span:first-child.is-active {
+    opacity: 1;
+    pointer-events: all;
+}

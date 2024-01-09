@@ -1,8 +1,13 @@
-import React from 'react';
+import {React, useState} from 'react';
 import { Link } from 'react-router-dom';
+import { RiCustomerService2Fill } from "react-icons/ri";
+import './Navbar.css';
 
 
 const Navbar = () => {
+
+  const [openContact, setOpenContact] = useState(false);
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -10,7 +15,7 @@ const Navbar = () => {
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse d-flex justify-content-between px-4" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link active" aria-current="page" to="fetch">Fetch</Link>
@@ -25,6 +30,10 @@ const Navbar = () => {
               <Link className="nav-link" to="crud">CRUD</Link>
             </li>
           </ul>
+          <div onClick={() => {setOpenContact(!openContact)}} className='contact'>
+            <span className={`${openContact ? 'is-active' : ''}`}><a href='tel:+381606546008'>+381606546008</a></span>
+            <span><RiCustomerService2Fill /></span>
+          </div>
         </div>
       </div>
     </nav>
