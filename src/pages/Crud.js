@@ -5,7 +5,7 @@ const Crud = ({persons, setPersons}) => {
   
   return (
     <div>
-        CRUD
+        In progress...
     </div>
   )
 };

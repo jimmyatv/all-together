@@ -5,7 +5,6 @@ const Fetch = () => {
   const [universities, setUniversities] = useState([]);
   const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
-  const [test, setTest] = useState('');
 
 
 //* FETCHOVANJE
@@ -27,20 +26,19 @@ const Fetch = () => {
     return(
       universities.filter(uni => uni.name.match(regrx))
     )
-  },[search, universities])
+  },[search, universities, regrx])
 
 
 
 
   return (
     <div>
-      <input onChange={(e) => { setTest(e.target.value) }} type='text' placeholder='Test Search' value={test} />
-      <h4>Typing Test for useMemo: {test}</h4>
-      <input onChange={(e) => { setSearch(e.target.value) }} type='text' placeholder='Search' value={search} />
+      <label>Make a quick search:</label>
+      <input style={{marginLeft:'10px'}} onChange={(e) => { setSearch(e.target.value) }} type='text' placeholder='Search' value={search} />
       <hr />
       {loading
         ?
-        <h3>Loading...</h3>
+        <div className='loading'></div>
         :
         <ul style={{ listStyle: 'none' }}>
           {finalSearch.map((uni, idx) => {

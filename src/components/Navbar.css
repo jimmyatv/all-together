@@ -5,13 +5,13 @@
 
 .contact a {
     text-decoration: none;
-    color: #fff;
+    color: #4b0505;
 }
 
 .contact span:first-child {
     margin-right: 1rem;
     padding: 0.5rem 2rem;
-    border: 2px solid #fff;
+    border: 2px solid #4b0505;
     border-radius: 20px;
     transition: 1s linear;
     pointer-events: none;
