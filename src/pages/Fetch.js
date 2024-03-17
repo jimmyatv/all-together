@@ -11,6 +11,7 @@ const Fetch = () => {
   useEffect(() => {
 
     setLoading(true);
+    //! async
     (async () => {
       const res = await fetch('http://universities.hipolabs.com/search?country=United+States')
       const uni = await res.json();
@@ -26,7 +27,7 @@ const Fetch = () => {
     return(
       universities.filter(uni => uni.name.match(regrx))
     )
-  },[search, universities, regrx])
+  },[universities, regrx])
 
 
 

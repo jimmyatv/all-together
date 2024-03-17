@@ -4,7 +4,7 @@ import love from '../assets/love.jpg';
 const Jimmy = () => {
   return (
     <div>
-        <img src={love} alt='' />
+        <img className='mainPhoto' src={love} alt='' />
     </div>
   )
 };

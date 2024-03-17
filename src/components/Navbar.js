@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { RiCustomerService2Fill } from "react-icons/ri";
+import logo from '../assets/ar-dark.png'
 import './Navbar.css';
 
 const Navbar = () => {
   const [openContact, setOpenContact] = useState(false);
   const [burgerMenuOpen, setBurgerMenuOpen] = useState(false);
 
+  const handleBugerMenu = () => {
+    setBurgerMenuOpen(!burgerMenuOpen)
+  }
+
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">Jimmy</Link>
+        <Link className="navbar-brand" to="/"><img className='logo' src={logo} alt='' /></Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -19,7 +24,7 @@ const Navbar = () => {
           aria-controls="navbarNav"
           aria-expanded="false"
           aria-label="Toggle navigation"
-          onClick={() => setBurgerMenuOpen(!burgerMenuOpen)}
+          onClick={handleBugerMenu}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -39,7 +44,7 @@ const Navbar = () => {
             </li>
           </ul>
           <div onClick={() => { setOpenContact(!openContact) }} className='contact'>
-            <span className={`${openContact ? 'is-active' : ''}`}><a href='tel:+381606546008'>+381606546008</a></span>
+            <span className={`${openContact ? 'is-active' : ''}`}><a href='tel:+381606546***'>+381606546***</a></span>
             <span><RiCustomerService2Fill /></span>
           </div>
         </div>
